@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$black-color: black;
+$white-color: white;
+$gray-color1: #696969;
+$orange-progress: #B45353;
+$border: 14.6957px;
+$gray-color2: #C1C1C1;
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+%back-ground-style {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+%font-text {
+    font-family: 'Inter';
+}
+
+%progress-bar {
+    height: 3px;
+    margin-top: 24.23px;
+}
+
+%svg-icons-preset {
+    width: 16px;
+    height: 16px;
+    margin-top: 11.23px;
+    cursor: pointer;
+}
+
+%buttons-preset {
+    border-radius: 50%;
+    width: 36.51px;
+    height: 34.29px;
+    cursor: pointer;
+}
+
+.player-container {
+    position: relative;
+    width: 540px;
+    height: 169px;
+    background-color: $black-color;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: $border;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.09));
+}
+
+.music-block {
+    display: flex;
+
+    .music-cover {
+        width: 169px;
+        height: 169px;
+        background-image: url(./image/1.png);
+        @extend %back-ground-style;
+        border-radius: $border;
+    }
+
+    .player {
+        margin: 17.5px 32px;
+
+        .artist-name {
+            @extend %font-text;
+            font-size: 18px;
+            font-weight: 700;
+            color: $white-color;
+        }
+
+        .music-name {
+            @extend %font-text;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 5px;
+            color: $gray-color1;
+        }
+
+        .spotify {
+            position: absolute;
+            @extend %back-ground-style;
+            @extend %svg-icons-preset;
+            width: 21px;
+            height: 21px;
+            background-image: url(./image/Vector.svg);
+            top: 10px;
+            right: 32.98px;
+        }
+    }
+}
+
+.progress-box {
+    display: flex;
+    width: 306px;
+    height: 30px;
+
+    .progress-line {
+        @extend %progress-bar;
+        width: 0%;
+        background-color: $orange-progress;
+    }
+
+    .whole-line {
+        @extend %progress-bar;
+        width: 257px;
+        background-color: $white-color;
+    }
+
+    .time {
+        margin-left: 16.5px;
+        margin-top: 17.23px;
+        @extend %font-text;
+        font-size: 12px;
+        font-weight: 400;
+        color: $gray-color2;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16.77px;
+
+    .refresh {
+        @extend %back-ground-style;
+        @extend %svg-icons-preset;
+        background-image: url(./image/repeatBtn.svg);
+    }
+    .backward {
+        @extend %buttons-preset;
+    }
+
+    .play {
+        @extend %buttons-preset;
+    }
+
+    .forward {
+        @extend %buttons-preset;
+    }
+
+    .faivorite {
+        @extend %back-ground-style;
+        @extend %svg-icons-preset;
+        background-image: url(./image/Icon.svg);
+    }
+}
